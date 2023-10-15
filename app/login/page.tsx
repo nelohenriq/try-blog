@@ -1,7 +1,7 @@
 "use client";
 
 import Input from "@/components/Input/page";
-import { FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
@@ -20,7 +20,7 @@ export default function page() {
   const router = useRouter();
   const [state, setstate] = useState(initialState);
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setstate({ ...state, [e.target.name]: e.target.value });
     e.preventDefault();
   };
